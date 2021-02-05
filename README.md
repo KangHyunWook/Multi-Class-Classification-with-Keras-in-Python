@@ -1,5 +1,5 @@
 # Multi-Class-Classification-with-Keras-in-Python
 
 The data used in this project is acquired from the following link, which is Kaggle site: <br />
--<a href="https://www.kaggle.com/alessiocorrado99/animals10" target="_blank" rel="noopener noreferrer">https://www.kaggle.com/alessiocorrado99/animals10 </a><br />
+-https://www.kaggle.com/alessiocorrado99/animals10 <br />
 You can get the original whole data from above link.
