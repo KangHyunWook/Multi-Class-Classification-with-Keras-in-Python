@@ -5,9 +5,9 @@ class Reader:
         pass
     def getAllFiles(self, rootDir):
         allFilePath=[]
-        items=os.listdir(root)
+        items=os.listdir(rootDir)
         for item in items:
-            path=os.path.join(root, item)
+            path=os.path.join(rootDir, item)
             if os.path.isdir(path):
                 allFilePath.extend(self.getAllFiles(path))
             else:
