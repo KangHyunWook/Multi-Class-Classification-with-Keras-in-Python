@@ -15,13 +15,17 @@ def getAllFiles(root):
             allFilePath.append(path)
     return allFilePath
     
-def getTrainData(allfilepath): #press tab
+def getTrainData(allfilepath, labels): #press tab
     trainX=[]
     trainY=[]
+    n_classes=len(labels)
     for filepath in allfilepath:
         splits=filepath.split('\\')
         label=splits[1]
-        trainY.append(label)
+        ind=labels.index(label)
+        y=np.zeros(n_classes)
+        y[ind]=1
+        trainY.append(y)
         img=cv2.imread(filepath)
         img=cv2.resize(img, (50, 50))
         trainX.append(img)
@@ -29,7 +33,7 @@ def getTrainData(allfilepath): #press tab
     #normalization scale: 0-1
     # trainX=trainX/255.0
     
-    trainX=np.array(trainX)
+    trainX=np.array(trainX)/255.
     trainY=np.array(trainY)
     
     return trainX, trainY
